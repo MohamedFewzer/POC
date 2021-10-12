@@ -1,0 +1,165 @@
+[
+    {
+        "id": "sd_5dPR0hc0mVAUEM1S",
+        "type": "tab",
+        "createdDate": "2021-10-11T04:56:35.487Z",
+        "label": "userDataClient",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "userDataClient",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_XXaSCMmIWUTIyjPW",
+        "type": "Script",
+        "z": "sd_5dPR0hc0mVAUEM1S",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"enterclienttt\",bh.input.dataValue)\n\n//console.log(\"enterclienttt2\",bh.local.dataFormVal.name)\n",
+        "functionName": "sd_XXaSCMmIWUTIyjPW",
+        "category": "Function",
+        "x": 280,
+        "y": 60,
+        "wires": [
+            [
+                "sd_KAkNbhPy6zpAa4hO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true,
+        "serviceName": "userDataClient"
+    },
+    {
+        "id": "sd_0V4nEg6HTYj915oW",
+        "type": "Start",
+        "z": "sd_5dPR0hc0mVAUEM1S",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "formClientData",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "dataValue",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "data",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "formClientData",
+        "category": "General",
+        "x": 65,
+        "y": 60,
+        "wires": [
+            [
+                "sd_XXaSCMmIWUTIyjPW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "userDataClient"
+    },
+    {
+        "id": "sd_KAkNbhPy6zpAa4hO",
+        "type": "CallSSDApi",
+        "z": "sd_5dPR0hc0mVAUEM1S",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlValue": "/inserVal",
+        "url": "/inserVal",
+        "ret": "json",
+        "retMappingObj": {},
+        "reqBody": "bh.input.dataValue",
+        "reqBodyObj": {
+            "mapVarType": "bh.input",
+            "mapVarValue": "dataValue"
+        },
+        "resultMapping": "bh.local.data",
+        "resultMappingObj": {
+            "mapVarType": "bh.local",
+            "mapVarValue": "data"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "inputVariables": [],
+        "inputParams": [],
+        "functionName": "sd_KAkNbhPy6zpAa4hO",
+        "category": "HTTP",
+        "x": 480,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    },
+    {
+        "id": "sd_RCwc5Aw0RX8sCnii",
+        "type": "Catch",
+        "z": "sd_5dPR0hc0mVAUEM1S",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "selectedNodes": "all-nodes",
+        "selectCatchType": "allnodes",
+        "masternodeList": "",
+        "ignoreList": [
+            "sd_4CSIje1LgO0sYnUO"
+        ],
+        "functionName": "sd_RCwc5Aw0RX8sCnii",
+        "category": "General",
+        "x": 60,
+        "y": 200,
+        "wires": [
+            [
+                "sd_4CSIje1LgO0sYnUO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "userDataClient"
+    },
+    {
+        "id": "sd_4CSIje1LgO0sYnUO",
+        "type": "Script",
+        "z": "sd_5dPR0hc0mVAUEM1S",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"catching err in client\")",
+        "functionName": "sd_4CSIje1LgO0sYnUO",
+        "category": "Function",
+        "x": 240,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "generated": true
+    }
+]

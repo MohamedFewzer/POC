@@ -1,0 +1,13 @@
+{
+    "displayName": "poc-data",
+    "appName": "poc-data",
+    "description": "poc for neutrinosclient",
+    "lastModified": "2021-10-11T04:22:18.694Z",
+    "imgSourcePath": "",
+    "version": "1.0.0",
+    "appType": "classic",
+    "templateName": "blank",
+    "createDate": "2021-10-11T04:22:17.485Z",
+    "analyticsId": "0f044137-71eb-1e0b-1f97-15ff6482be50",
+    "createdStudioVersion": "8.0.0"
+}

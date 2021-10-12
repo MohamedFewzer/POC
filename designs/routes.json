@@ -1,0 +1,18 @@
+{
+    "routes": [
+        {
+            "path": "userData",
+            "component": "UserDataComponent"
+        },
+        {
+            "path": "''",
+            "redirectTo": "userData",
+            "pathMatch": "full",
+            "default": true
+        },
+        {
+            "path": "**",
+            "component": "PageNotFoundComponent"
+        }
+    ]
+}

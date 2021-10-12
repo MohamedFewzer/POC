@@ -1,0 +1,56 @@
+<div fxLayout="row " style="background-color:grey" class="search_boxNav" fxLayoutAlign="center center" [fxShow]="true" [fxHide]="false">
+  <form [formGroup]="page.dataForm" fxFlex="80%">
+    <mat-card>
+      <mat-card-title>User Data</mat-card-title>
+
+      <mat-card-content>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" [fxHide]="false">
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="name">
+            <mat-error align="start" *ngIf="page.dataForm.controls.name.errors?.required">Please enter Name</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.name.errors?.pattern">Only Alphabets and space allowed</mat-error>
+            <mat-label>Name</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="phoneNumber">
+            <mat-error align="start" *ngIf="page.dataForm.controls.phoneNumber.errors?.required">Please enter PhoneNumber</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.phoneNumber.errors?.pattern">PhoneNumber should be only Number and start with 7,8,9.</mat-error>
+            <mat-label>Phone Number</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="email">
+            <mat-error align="start" *ngIf="page.dataForm.controls.email.errors?.required">Please enter emailId</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.email.errors?.pattern">Email consists of alphabet,number,underscore,dot and @.</mat-error>
+            <mat-label>Email</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;">
+            <input matInput placeholder="Date of Birth" [matDatepicker]="picker" formControlName="dob" [max]="page.todaysDate" [required]="false" [disabled]="false">
+            <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+            <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+            <mat-error align="start" *ngIf="page.dataForm.controls.dob.errors?.required">Please enter the dob</mat-error>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="age">
+            <mat-error align="start" *ngIf="page.dataForm.controls.age.errors?.required">Please enter Age</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.age.errors?.pattern">Please enter age between 1 to 100</mat-error>
+            <mat-label>Age</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput [required]="false" formControlName="userName">
+            <mat-error align="start" *ngIf="page.dataForm.controls.userName.errors?.required">Please enter username</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.userName.errors?.pattern">Username contain lower,upper case,number and symbols(.)(-)(_)</mat-error>
+            <mat-label>User Name</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;standard&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="true">
+            <input matInput type="password" [required]="false" formControlName="password">
+            <mat-error align="start" *ngIf="page.dataForm.controls.password.errors?.required">Please enter password</mat-error>
+            <mat-error align="start" *ngIf="page.dataForm.controls.password.errors?.pattern">password contain one upper case,one lower case, one digit, one special character, Minimum 8 in length.</mat-error>
+            <mat-label>Password</mat-label>
+          </mat-form-field>
+        </div>
+      </mat-card-content>
+
+      <mat-card-actions><button mat-raised-button color="primary" (click)="submitForm()">Submit</button><button mat-raised-button color="accent" type="reset">Clear</button></mat-card-actions>
+    </mat-card>
+  </form>
+</div>
